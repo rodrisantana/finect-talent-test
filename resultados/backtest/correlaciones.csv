@@ -1,0 +1,8 @@
+,MSCI World,MSCI Emergentes,MSCI World Small Cap,Renta fija global cubierta,Monetario euro,Infraestructuras cotizadas,Oro
+MSCI World,1.0,0.71,0.93,0.08,-0.12,0.72,-0.14
+MSCI Emergentes,0.71,1.0,0.71,0.07,-0.06,0.46,-0.06
+MSCI World Small Cap,0.93,0.71,1.0,0.08,-0.14,0.67,-0.14
+Renta fija global cubierta,0.08,0.07,0.08,1.0,0.1,0.23,0.12
+Monetario euro,-0.12,-0.06,-0.14,0.1,1.0,-0.1,0.12
+Infraestructuras cotizadas,0.72,0.46,0.67,0.23,-0.1,1.0,0.02
+Oro,-0.14,-0.06,-0.14,0.12,0.12,0.02,1.0

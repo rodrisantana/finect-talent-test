@@ -1,0 +1,248 @@
+{
+ "fuente": "J.P. Morgan Asset Management, Long-Term Capital Market Assumptions 2026, matriz en euros",
+ "formato_estadisticas": "clase de activo: [rentabilidad compuesta %, rentabilidad aritmetica %, volatilidad %, cuarto valor publicado en la matriz, no usado]",
+ "estadisticas": {
+  "Euro Cash": [
+   2.3,
+   2.302,
+   0.638,
+   2.4
+  ],
+  "Global Multiverse Bonds hedged": [
+   3.8,
+   3.872,
+   3.882,
+   3.6
+  ],
+  "World Government Bonds hedged": [
+   3.5,
+   3.578,
+   4.031,
+   3.2
+  ],
+  "Developed World Equity": [
+   6.3,
+   7.292,
+   14.691,
+   5.9
+  ],
+  "AC World Equity": [
+   6.4,
+   7.351,
+   14.384,
+   5.9
+  ],
+  "Emerging Markets Equity": [
+   7.2,
+   8.476,
+   16.783,
+   6
+  ],
+  "Global Core Infrastructure": [
+   5.9,
+   6.513,
+   11.476,
+   5.1
+  ],
+  "Global REITs": [
+   8.1,
+   8.952,
+   13.705,
+   6.8
+  ],
+  "Gold": [
+   4.9,
+   6.033,
+   15.628,
+   2.8
+  ],
+  "Euro Inflation": [
+   2,
+   2.008,
+   1.316,
+   2
+  ],
+  "U.S. Large Cap": [
+   6.1,
+   7.195,
+   15.44,
+   5.5
+  ],
+  "European Large Cap": [
+   6.4,
+   7.427,
+   14.962,
+   6.6
+  ]
+ },
+ "correlaciones": {
+  "Euro Cash": {
+   "Euro Cash": 1,
+   "Global Multiverse Bonds hedged": 0.213,
+   "World Government Bonds hedged": 0.221,
+   "Developed World Equity": -0.162,
+   "AC World Equity": -0.155,
+   "Emerging Markets Equity": -0.085,
+   "Global Core Infrastructure": -0.169,
+   "Global REITs": -0.171,
+   "Gold": 0.103,
+   "Euro Inflation": -0.08,
+   "U.S. Large Cap": -0.17,
+   "European Large Cap": -0.148
+  },
+  "Global Multiverse Bonds hedged": {
+   "Euro Cash": 0.213,
+   "Global Multiverse Bonds hedged": 1,
+   "World Government Bonds hedged": 0.922,
+   "Developed World Equity": 0.259,
+   "AC World Equity": 0.267,
+   "Emerging Markets Equity": 0.252,
+   "Global Core Infrastructure": -0.112,
+   "Global REITs": 0.393,
+   "Gold": 0.189,
+   "Euro Inflation": -0.284,
+   "U.S. Large Cap": 0.226,
+   "European Large Cap": 0.274
+  },
+  "World Government Bonds hedged": {
+   "Euro Cash": 0.221,
+   "Global Multiverse Bonds hedged": 0.922,
+   "World Government Bonds hedged": 1,
+   "Developed World Equity": 0.052,
+   "AC World Equity": 0.05,
+   "Emerging Markets Equity": 0.014,
+   "Global Core Infrastructure": -0.22,
+   "Global REITs": 0.208,
+   "Gold": 0.206,
+   "Euro Inflation": -0.276,
+   "U.S. Large Cap": 0.062,
+   "European Large Cap": 0.034
+  },
+  "Developed World Equity": {
+   "Euro Cash": -0.162,
+   "Global Multiverse Bonds hedged": 0.259,
+   "World Government Bonds hedged": 0.052,
+   "Developed World Equity": 1,
+   "AC World Equity": 0.996,
+   "Emerging Markets Equity": 0.714,
+   "Global Core Infrastructure": 0.384,
+   "Global REITs": 0.838,
+   "Gold": -0.1,
+   "Euro Inflation": 0.046,
+   "U.S. Large Cap": 0.973,
+   "European Large Cap": 0.898
+  },
+  "AC World Equity": {
+   "Euro Cash": -0.155,
+   "Global Multiverse Bonds hedged": 0.267,
+   "World Government Bonds hedged": 0.05,
+   "Developed World Equity": 0.996,
+   "AC World Equity": 1,
+   "Emerging Markets Equity": 0.773,
+   "Global Core Infrastructure": 0.383,
+   "Global REITs": 0.841,
+   "Gold": -0.09,
+   "Euro Inflation": 0.034,
+   "U.S. Large Cap": 0.958,
+   "European Large Cap": 0.906
+  },
+  "Emerging Markets Equity": {
+   "Euro Cash": -0.085,
+   "Global Multiverse Bonds hedged": 0.252,
+   "World Government Bonds hedged": 0.014,
+   "Developed World Equity": 0.714,
+   "AC World Equity": 0.773,
+   "Emerging Markets Equity": 1,
+   "Global Core Infrastructure": 0.306,
+   "Global REITs": 0.653,
+   "Gold": 0.012,
+   "Euro Inflation": -0.065,
+   "U.S. Large Cap": 0.617,
+   "European Large Cap": 0.735
+  },
+  "Global Core Infrastructure": {
+   "Euro Cash": -0.169,
+   "Global Multiverse Bonds hedged": -0.112,
+   "World Government Bonds hedged": -0.22,
+   "Developed World Equity": 0.384,
+   "AC World Equity": 0.383,
+   "Emerging Markets Equity": 0.306,
+   "Global Core Infrastructure": 1,
+   "Global REITs": 0.397,
+   "Gold": 0.142,
+   "Euro Inflation": 0.22,
+   "U.S. Large Cap": 0.408,
+   "European Large Cap": 0.278
+  },
+  "Global REITs": {
+   "Euro Cash": -0.171,
+   "Global Multiverse Bonds hedged": 0.393,
+   "World Government Bonds hedged": 0.208,
+   "Developed World Equity": 0.838,
+   "AC World Equity": 0.841,
+   "Emerging Markets Equity": 0.653,
+   "Global Core Infrastructure": 0.397,
+   "Global REITs": 1,
+   "Gold": -0.038,
+   "Euro Inflation": -0.03,
+   "U.S. Large Cap": 0.801,
+   "European Large Cap": 0.79
+  },
+  "Gold": {
+   "Euro Cash": 0.103,
+   "Global Multiverse Bonds hedged": 0.189,
+   "World Government Bonds hedged": 0.206,
+   "Developed World Equity": -0.1,
+   "AC World Equity": -0.09,
+   "Emerging Markets Equity": 0.012,
+   "Global Core Infrastructure": 0.142,
+   "Global REITs": -0.038,
+   "Gold": 1,
+   "Euro Inflation": -0.008,
+   "U.S. Large Cap": -0.084,
+   "European Large Cap": -0.157
+  },
+  "Euro Inflation": {
+   "Euro Cash": -0.08,
+   "Global Multiverse Bonds hedged": -0.284,
+   "World Government Bonds hedged": -0.276,
+   "Developed World Equity": 0.046,
+   "AC World Equity": 0.034,
+   "Emerging Markets Equity": -0.065,
+   "Global Core Infrastructure": 0.22,
+   "Global REITs": -0.03,
+   "Gold": -0.008,
+   "Euro Inflation": 1,
+   "U.S. Large Cap": 0.06,
+   "European Large Cap": 0.022
+  },
+  "U.S. Large Cap": {
+   "Euro Cash": -0.17,
+   "Global Multiverse Bonds hedged": 0.226,
+   "World Government Bonds hedged": 0.062,
+   "Developed World Equity": 0.973,
+   "AC World Equity": 0.958,
+   "Emerging Markets Equity": 0.617,
+   "Global Core Infrastructure": 0.408,
+   "Global REITs": 0.801,
+   "Gold": -0.084,
+   "Euro Inflation": 0.06,
+   "U.S. Large Cap": 1,
+   "European Large Cap": 0.802
+  },
+  "European Large Cap": {
+   "Euro Cash": -0.148,
+   "Global Multiverse Bonds hedged": 0.274,
+   "World Government Bonds hedged": 0.034,
+   "Developed World Equity": 0.898,
+   "AC World Equity": 0.906,
+   "Emerging Markets Equity": 0.735,
+   "Global Core Infrastructure": 0.278,
+   "Global REITs": 0.79,
+   "Gold": -0.157,
+   "Euro Inflation": 0.022,
+   "U.S. Large Cap": 0.802,
+   "European Large Cap": 1
+  }
+ }
+}

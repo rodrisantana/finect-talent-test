@@ -1,0 +1,7 @@
+escenario,gasto_sostenible_90%_€,diferencia_vs_base_%
+"Base: 5,2 % compuesto bruto, volatilidad 7,6 %",566000.0,0.0
+"Rentabilidad un punto menor (4,2 % bruto)",487000.0,-13.9
+"Rentabilidad medio punto menor (4,7 % bruto)",528000.0,-6.7
+"Volatilidad 6,6 % (la de la LTCMA)",593000.0,4.8
+Volatilidad 10 %,505000.0,-10.8
+Inflación 3 % en lugar de 2 %,451000.0,-20.2

@@ -1,0 +1,5 @@
+escenario,gasto_sostenible_90%_€,diferencia_vs_base_%
+"Base: costes 0,9 % anual",566000.0,0.0
+"Costes 0,6 % (asesoramiento y contrato más baratos)",595000.0,5.2
+"Costes 0,4 % (solo fondos y contrato)",615000.0,8.8
+Sin costes (ideal imposible),660000.0,16.6
