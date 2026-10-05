@@ -12,9 +12,13 @@ Evitar decir: "las simulaciones nos dieron estos porcentajes" o "es la cartera �
 
 Con las hipótesis de J.P. Morgan, una 60/40 permitiría gastar unos 50.000 € más al año en el escenario central, pero a un 85 % de confianza sale algo peor, y su caída histórica es del 28,5 % frente al 18,5 % de la propuesta (2007-09). Su ingreso, además, ya se comporta como una acción muy volátil. Cifras: `alternativas_cartera.py` y `backtest_historico.py`.
 
-## ¿Y por qué no menos?
+## ¿Y por qué un 40 % de renta variable y no un 30 %?
 
-Con un 30 % de renta variable el gasto al 90 % sale prácticamente igual (588.000 € frente a 594.000 €) con menos caída (-12 % frente a -18,5 %), pero el escenario central baja unos 40.000 € y la cartera crece menos por si juega más años. El 40 % es una elección de preferencia por el riesgo, no una verdad matemática; reconocerlo suena mejor que defenderla como única.
+Respuesta honesta y con cifras: "Comparamos el 30 %, el 40 % y el 50 %. En todo lo que afecta al gasto, el 40 % iguala o supera al 30 %: unos 40.000 € más al año en el escenario central, unos 17.000 € más si hay una crisis como la de 2008 justo al retirarse, más gasto con rentabilidades peores, con más inflación o con más longevidad, y deja un patrimonio mediano de 26 millones frente a 18. El coste es más oscilación: una caída histórica del 18,5 % en lugar del 12 %. Y no subimos al 50 % porque más renta variable ya no aumenta el gasto seguro, 595.000 € frente a 594.000 €, y empeora la caída seis puntos. Es una decisión de preferencia por el riesgo, y el 30 % también sería defendible."
+
+La prueba de estrés es la más convincente: con una crisis como 2007-09 justo al retirarse, el gasto central baja un 7 % (de 752.000 a 698.000 €) y sigue por encima de los 550.000 € del plan. Cifras: `resultados/robustez/robustez_carteras.csv`.
+
+Matiz honesto si insisten: el modelo supone rentabilidades independientes entre años; las crisis reales tienen colas más gruesas, y eso favorece a las carteras con menos renta variable.
 
 ## ¿Habéis optimizado la cartera? ¿Dónde está en la frontera eficiente?
 

@@ -65,7 +65,7 @@ def simular(gasto, n=1, vol=0.0, bruto=None, edad_retirada=33,
             valor_inmuebles=6.3, renta_inmuebles=0.02,
             edad_final=95, semilla=7, cartera_inicial=2.7,
             vender_inmuebles=False, coste=COSTE_TOTAL,
-            impuesto=IMPUESTO_PLUSVALIA, inflacion=INFLACION):
+            impuesto=IMPUESTO_PLUSVALIA, inflacion=INFLACION, rend_forzado=None):
     """Simula la cartera financiera del futbolista, año a año.
 
     Parámetros principales
@@ -79,6 +79,9 @@ def simular(gasto, n=1, vol=0.0, bruto=None, edad_retirada=33,
                      (None = igual que antes)
     vender_inmuebles si es True, al agotarse la cartera se venden los inmuebles
     coste, impuesto  coste anual total y tipo sobre la ganancia de las retiradas
+    rend_forzado     diccionario {edad: rentabilidad bruta nominal de ese año} para imponer un
+                     año concreto (por ejemplo, una crisis justo al retirarse). El resto de años
+                     siguen el modelo normal. Sirve para las pruebas de estrés.
 
     Devuelve (edades, trayectoria, edad_agotamiento):
       trayectoria      matriz n x edades con el valor real de la cartera cada año
@@ -98,6 +101,10 @@ def simular(gasto, n=1, vol=0.0, bruto=None, edad_retirada=33,
         rend_nominal = np.exp(rng.normal(np.log(1 + neto), vol, (n, len(edades)))) - 1
     else:
         rend_nominal = np.full((n, len(edades)), neto)
+
+    if rend_forzado:                              # prueba de estrés: años impuestos (restando costes)
+        for edad_f, rent_f in rend_forzado.items():
+            rend_nominal[:, edad_f - EDAD_INICIAL] = rent_f - coste
 
     cartera = np.full(n, cartera_inicial)         # valor de la cartera en euros de hoy
     base_coste = np.full(n, cartera_inicial)      # lo aportado (en euros nominales), para saber qué parte es ganancia

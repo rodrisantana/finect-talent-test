@@ -29,6 +29,7 @@ También se puede ejecutar cada script por separado (ver la tabla de abajo). Los
 | `src/backtest_historico.py` | Backtest 2006 a 2026 de la cartera, la 60/40 y el MSCI World |
 | `src/sensibilidades.py` | Qué pasa si cambian los costes, la edad de retirada, la lesión, el mercado o los impuestos |
 | `src/alternativas_cartera.py` | Compara la propuesta con 12 alternativas y con el óptimo matemático |
+| `src/robustez_carteras.py` | Pruebas de robustez y de estrés para decidir entre un 30 %, un 40 % y un 50 % de renta variable |
 | `src/verificar.py` | Prueba automática: comprueba que el código reproduce las cifras de la presentación |
 | `datos/` | Índices mensuales en euros (backtest) y supuestos de J.P. Morgan LTCMA 2026 |
 | `resultados/` | Tablas CSV y gráficos generados |
@@ -96,6 +97,31 @@ Lo que se lee de la tabla:
 ![Gasto frente a caída](resultados/alternativas/gasto_frente_a_caida.png)
 ![Frontera](resultados/alternativas/frontera_eficiente.png)
 
+### ¿Y por qué un 40 % de renta variable y no un 30 %?
+
+La comparación anterior no basta para decidir entre 30 % y 40 %, porque a 90 % y 95 % de confianza dan casi lo mismo. Por eso hay un segundo análisis (`src/robustez_carteras.py`) con pruebas de qué pasa cuando las cosas salen peor y cuánto patrimonio queda:
+
+| | RV 30 % | **Propuesta (40 %)** | RV 50 % | 60/40 |
+|---|---:|---:|---:|---:|
+| Prob. de llegar a 95 gastando 600.000 € | 87,2 % | **88,9 %** | 89,3 % | 86,1 % |
+| Gasto al 90 %, rentabilidad 1 punto menor | 498.000 | **503.000** | 505.000 | 487.000 |
+| Gasto al 90 %, inflación del 3 % | 467.000 | **471.000** | 473.000 | 457.000 |
+| Gasto al 90 %, llegando a los 100 años | 559.000 | **565.000** | 567.000 | 545.000 |
+| Gasto central sin crisis | 712.000 | **752.000** | 789.000 | 797.000 |
+| Gasto central si hay una crisis como 2008 justo al retirarse | 681.000 | **698.000** | 713.000 | 682.000 |
+| Patrimonio mediano a los 95 (M€ de hoy) | 17,8 | **26,5** | 36,4 | 37,9 |
+| Caída máxima histórica 2007-09 | -12,2 % | **-18,5 %** | -24,4 % | -28,5 % |
+
+Qué se puede defender con esto:
+
+* **El 40 % iguala o supera al 30 % en todo lo que afecta al gasto.** Gasto central (+40.000 €), gasto tras una crisis (+17.000 €), con rentabilidades peores, con más inflación o con más longevidad (+4.000 a +6.000 €), y deja más patrimonio (mediana de 26,5 M€ frente a 17,8 M€). En el 10 % de peores escenarios es parecido (2,7 M€ frente a 2,2 M€).
+* **El coste de pasar del 30 % al 40 % es más oscilación**: una caída histórica del 18,5 % en lugar del 12,2 %.
+* **La prueba de estrés es la más convincente.** Con una crisis como la de 2007-09 justo al retirarse, el gasto central baja un 7 %, de 752.000 a 698.000 €, y sigue por encima de los 550.000 € del plan.
+* **¿Por qué parar en el 40 % y no subir al 50 %?** Porque más renta variable ya no compra seguridad: con un 50 % el gasto al 90 % es de 595.000 €, solo 1.000 € más, y la caída histórica empeora seis puntos. Con un 60/40 el gasto seguro incluso baja.
+* **La composición también importa.** Una mezcla clásica 40/60 de renta variable y renta fija, con la misma renta variable y una volatilidad parecida, da 572.000 € al 90 %: 22.000 € menos que nuestra mezcla con monetario, oro e infraestructuras.
+
+Lo que no demuestra: que 40 % sea mejor que 30 % en un sentido absoluto. El modelo supone rentabilidades independientes entre años y volatilidad constante, y las crisis reales tienen colas más gruesas, lo que favorece a las carteras con menos renta variable. Con un 30 % se duerme mejor y se gasta algo menos. El 40 % es el punto en que más rentabilidad esperada y más patrimonio todavía no cuestan seguridad en el gasto, y es una decisión de preferencia por el riesgo que hay que presentar como tal.
+
 ### Sensibilidades (gasto al 90 % de confianza, caso base 566.000 €)
 
 | Cambio | Gasto | Diferencia |
@@ -128,7 +154,7 @@ Orden de lectura recomendado:
 1. `src/modelo_plan.py`: la función `simular` es el corazón. Léela de arriba abajo con el docstring a mano.
 2. `src/plan_montecarlo.py`: ve cómo se usa el modelo para sacar las tablas.
 3. `src/backtest_historico.py`: otra forma de contrastar, con datos reales.
-4. `src/alternativas_cartera.py`: cómo se comparan carteras con los tres métodos.
+4. `src/alternativas_cartera.py` y `src/robustez_carteras.py`: cómo se comparan carteras con los tres métodos y con pruebas de estrés.
 
 Ejercicios para entenderlo cambiando algo:
 
