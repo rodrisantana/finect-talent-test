@@ -52,3 +52,23 @@ python resultados_v2.py      # unos 3 minutos
 - Seguro: 27 M€ el primer año, decreciente hasta 2031, prima del 1,25 % (rango de mercado 0,5-2 %).
 
 Pendiente de verificar con un especialista: la prima real del seguro, la aplicación del límite conjunto a no residentes (TEAC, diciembre de 2025) y la adaptación del contrato luxemburgués a la normativa española.
+
+## Versión final (resultados_v5.py y graficos_v5.py)
+
+Tras la mentoría: todas las cifras en **euros de hoy**, un piso de 1 M€ al año mientras juega (27-32) y, al volver, compra hasta que los inmuebles (pisos + inmobiliario cotizado) sean el 45 %.
+
+```
+python resultados_v5.py   # cifras (resultados/cifras_v5.json), unos 5 minutos
+python graficos_v5.py     # gráficos h0-h4, segundos
+```
+
+| | Cifra (euros de hoy) |
+|---|---|
+| Patrimonio a los 33 (negativo / realista / optimista) | 49 / 59 / 73 M€ |
+| Gasto de por vida en 9 de cada 10 escenarios | 1,08 M€ al año (1,1 M€ llega en el 89 %) |
+| Con su gasto actual (1,5 M€) | llega en el 52 % |
+| Pisos | de 14 a más de 20 M€; inmuebles ≈46 % a los 35 |
+| Coste de las compras de pisos | menos de un 1 % del gasto |
+| Frente a una 60/40 / la cartera de la v1 | +85.000 € / +75.000 € al año |
+| Lesión a los 28, con y sin colchón y seguro | 0,85 frente a 0,60 M€ al año |
+| Patrimonio a los 95, realista | ≈75 M€ |

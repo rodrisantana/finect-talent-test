@@ -15,8 +15,8 @@ Estructura del plan:
   * Seguro de fin de carrera decreciente (27 M€ el primer año, hasta 0 en 2031).
   * Cartera financiera dentro de un contrato de capitalización, en tres etapas:
       Carrera (26-30), Puente (31-39) y Rentas (40 en adelante).
-  * Pisos: no se compran más mientras sea no residente; al volver a España (33) se compran
-    los necesarios para que los inmuebles (pisos + inmobiliario cotizado) sean el 40 % del patrimonio.
+  * Pisos: un piso de 1 M€ al año mientras juega (27-32, siendo no residente) y, al volver a España (33),
+    los necesarios para que los inmuebles (pisos + inmobiliario cotizado) sean el 45 % del patrimonio.
   * Agencia: hasta 3,5 M€ (como en la versión 1), invertidos en la cartera hasta que se usan por fases:
     1,5 M€ a los 33 (licencia FIFA y equipo), 1 M€ a los 34 y 1 M€ a los 35 (primeros representados), a rentabilidad 0 %.
 """
@@ -61,7 +61,8 @@ SUPUESTOS = dict(
     rent_bruta_pisos=0.05, gastos_pisos=0.25, irnr=0.19, irpf_alquiler=0.22,
     revalorizacion_pisos=0.025, vol_pisos=0.08, coste_compra_pisos=0.07,
     coste_cartera=0.009, impuesto_rescate=0.28, prima_seguro=0.0125,
-    objetivo_inmuebles=0.40, agencia=((33, 1.5), (34, 1.0), (35, 1.0)),
+    objetivo_inmuebles=0.45, agencia=((33, 1.5), (34, 1.0), (35, 1.0)),
+    compras_pisos=((27, 1.0), (28, 1.0), (29, 1.0), (30, 1.0), (31, 1.0), (32, 1.0)),
     rent_colchon=0.022, haircut_venta_pisos=0.10, indexar_itsgf=True,
 )
 
@@ -120,6 +121,10 @@ def simular(gasto_retiro_hoy, n=10000, semilla=11, lesion_edad=None, con_seguro=
             imp_patr = itsgf(P / ix) * ix                    # Solidaridad sobre los pisos como no residente
             alquiler = P * S["rent_bruta_pisos"] * (1 - S["gastos_pisos"]) * (1 - S["irnr"])
             flujo = ingreso - gasto - prima - imp_patr + alquiler
+            for e_c, imp_c in S.get("compras_pisos", ()):
+                if edad == e_c:
+                    # compra de pisos en España siendo no residente (con sus costes de compra)
+                    F = F - imp_c * (1 + S["coste_compra_pisos"]); B = B - imp_c * (1 + S["coste_compra_pisos"]); P = P + imp_c
             if compra_ya and edad == 27:
                 # compra de pisos en España siendo no residente (variante para comparar)
                 F = F - compra_ya * (1 + S["coste_compra_pisos"]); B = B - compra_ya * (1 + S["coste_compra_pisos"]); P = P + compra_ya
