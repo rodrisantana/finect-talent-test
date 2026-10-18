@@ -1,0 +1,53 @@
+# Versión 2 del plan (tras la primera mentoría)
+
+Caso actualizado: futbolista internacional de 26 años que ficha por un club de la Ligue 1 (residente fiscal en Francia, régimen de impatriados), 13,6 M€ brutos al año hasta 2031, dos temporadas más, retirada a los 33 y vuelta a España. Patrimonio de 20 M€, un 70 % en pisos en España.
+
+## Qué cambia respecto a la versión 1
+
+| Mentoría | Respuesta en la v2 |
+|---|---|
+| Una sola cartera para toda la vida no basta | Tres carteras por etapa: Carrera (26-30), Puente (31-39) y Rentas (40+) |
+| Las infraestructuras son renta variable, no protección | Fuera. Entra más inmobiliario cotizado y oro |
+| Gráficos demasiado simples, sin efecto compuesto | 20.000 escenarios: negativo, realista y optimista |
+| «¿No voy a poder comprar más pisitos?» | Inmuebles en torno al 40 % del patrimonio y compra de pisos al volver a España |
+| Explicar mejor el gasto sostenible | Probabilidad de que el dinero llegue a los 95 según lo que gaste |
+
+## Archivos
+
+| Archivo | Qué hace |
+|---|---|
+| `ltcma_v2.py` | Rentabilidades, volatilidades y correlaciones de J.P. Morgan AM (LTCMA 2026, euros) |
+| `modelo_v2.py` | Simulación año a año: sueldo, impuestos, seguro, colchón, pisos, tres carteras, retirada y gasto |
+| `resultados_v2.py` | Cifras de la presentación (`resultados/cifras_v2.json`) y gráficos |
+
+```
+cd v2
+python resultados_v2.py      # unos 3 minutos
+```
+
+## Resultados principales
+
+| | Cifra |
+|---|---|
+| Patrimonio a los 33 (negativo / realista / optimista) | 57 / 70 / 86 M€ |
+| Gasto de por vida que llega a los 95 en 9 de cada 10 escenarios | 1,13 M€ al año de hoy |
+| Con su gasto actual (1,5 M€) | llega en 59 de cada 100 |
+| Frente a la cartera de la v1 / una 60/40 | +73.000 € / +90.000 € de gasto seguro al año |
+| Lesión a los 28, con y sin colchón y seguro | 0,89 M€ frente a 0,64 M€ al año |
+
+| Cartera | Rentabilidad esperada | Volatilidad | Peor año (1 de cada 20) |
+|---|---:|---:|---:|
+| Carrera | 6,4 % | 10,3 % | -10 % |
+| Puente | 6,0 % | 8,8 % | -8 % |
+| Rentas | 5,9 % | 8,5 % | -8 % |
+
+## Hipótesis que conviene conocer
+
+- Neto en Francia calibrado con el caso anterior: 10,6 % de cotizaciones y 32,5 % de impuesto sobre el bruto con el régimen 155 B.
+- Pisos: 5 % de rentabilidad bruta, 25 % de gastos, 19 % de impuesto como no residente (22 % como residente), 2,5 % de revalorización con volatilidad del 8 %.
+- Impuesto de Solidaridad: escala estatal con tramos actualizados con la inflación. Como no residente, sobre los pisos sin límite conjunto. Como residente en España, sobre todo el patrimonio con el límite conjunto (mínimo del 20 % de la cuota).
+- Costes de la cartera: 0,8 % al año. Rescates: 28 % sobre la parte de ganancia.
+- Regla de gasto: si el patrimonio real cae por debajo del 80 % del que tenía al retirarse, ese año gasta un 15 % menos.
+- Seguro: 27 M€ el primer año, decreciente hasta 2031, prima del 1,25 % (rango de mercado 0,5-2 %).
+
+Pendiente de verificar con un especialista: la prima real del seguro, la aplicación del límite conjunto a no residentes (TEAC, diciembre de 2025) y la adaptación del contrato luxemburgués a la normativa española.
