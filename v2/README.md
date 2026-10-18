@@ -29,11 +29,11 @@ python resultados_v2.py      # unos 3 minutos
 
 | | Cifra |
 |---|---|
-| Patrimonio a los 33 (negativo / realista / optimista) | 57 / 70 / 86 M€ |
-| Gasto de por vida que llega a los 95 en 9 de cada 10 escenarios | 1,13 M€ al año de hoy |
-| Con su gasto actual (1,5 M€) | llega en 59 de cada 100 |
-| Frente a la cartera de la v1 / una 60/40 | +73.000 € / +90.000 € de gasto seguro al año |
-| Lesión a los 28, con y sin colchón y seguro | 0,89 M€ frente a 0,64 M€ al año |
+| Patrimonio a los 33 (negativo / realista / optimista) | 57 / 69 / 86 M€ |
+| Gasto de por vida que llega a los 95 en 9 de cada 10 escenarios | 1,09 M€ al año de hoy (1,1 M€ llega en el 89 %) |
+| Con su gasto actual (1,5 M€) | llega en 54 de cada 100 |
+| Frente a la cartera de la v1 / una 60/40 | +70.000 € / +85.000 € de gasto seguro al año |
+| Lesión a los 28, con y sin colchón y seguro | 0,85 M€ frente a 0,61 M€ al año |
 
 | Cartera | Rentabilidad esperada | Volatilidad | Peor año (1 de cada 20) |
 |---|---:|---:|---:|
@@ -46,7 +46,8 @@ python resultados_v2.py      # unos 3 minutos
 - Neto en Francia calibrado con el caso anterior: 10,6 % de cotizaciones y 32,5 % de impuesto sobre el bruto con el régimen 155 B.
 - Pisos: 5 % de rentabilidad bruta, 25 % de gastos, 19 % de impuesto como no residente (22 % como residente), 2,5 % de revalorización con volatilidad del 8 %.
 - Impuesto de Solidaridad: escala estatal con tramos actualizados con la inflación. Como no residente, sobre los pisos sin límite conjunto. Como residente en España, sobre todo el patrimonio con el límite conjunto (mínimo del 20 % de la cuota).
-- Costes de la cartera: 0,8 % al año. Rescates: 28 % sobre la parte de ganancia.
+- Costes de la cartera: 0,9 % al año (fondos 0,22 %, contrato y depositario 0,4 %, asesoramiento 0,3 %), como en la v1. Rescates: 28 % sobre la parte de ganancia.
+- Agencia: hasta 3,5 M€, como en la v1: 1,5 M€ a los 33 y 1 M€ a los 34 y a los 35, a rentabilidad cero.
 - Regla de gasto: si el patrimonio real cae por debajo del 80 % del que tenía al retirarse, ese año gasta un 15 % menos.
 - Seguro: 27 M€ el primer año, decreciente hasta 2031, prima del 1,25 % (rango de mercado 0,5-2 %).
 

@@ -49,6 +49,8 @@ for k, w in M.CARTERAS.items():
 re_share = np.median((t["P"] + 0.15 * t["F"]) / W, axis=0)
 R["peso_inmuebles"] = {a: float(re_share[E.index(a)]) for a in range(26, 41)}
 R["pisos_mediana"] = {a: float(np.median(t["P"][:, E.index(a)])) for a in (32, 33)}
+R["composicion"] = {a: {k: float(np.median(t[k][:, E.index(a)] / W[:, E.index(a)])) for k in ("P", "F", "C", "A")} for a in (26, 33, 35)}
+R["composicion_M"] = {a: {k: float(np.median(t[k][:, E.index(a)])) for k in ("P", "F", "C", "A", "W")} for a in (26, 33, 35)}
 json.dump(R, open(OUT / "cifras_v2.json", "w"), indent=1, ensure_ascii=False, default=float)
 print(json.dumps({k: v for k, v in R.items() if k not in ("carteras", "peso_inmuebles")}, indent=1, default=float, ensure_ascii=False))
 
@@ -154,8 +156,8 @@ ax.bar(anios, [3] * 5, color=ORANGE, width=.6, label="Colchón (3 M€)")
 ax.bar(anios, aseg, bottom=3, color=LIL2, width=.6, label="Seguro de fin de carrera")
 for i, v_ in enumerate(aseg):
     ax.text(i, v_ + 3.6, fmt(v_), ha="center", fontsize=8.5, fontweight="bold", color=NAVY)
-ax.set_yticks([]); ax.spines["left"].set_visible(False); ax.legend(frameon=False, fontsize=8)
-ax.set_title("Protección si una lesión le retira, M€", fontsize=8.5, loc="left", color=GREY)
+ax.set_yticks([]); ax.spines["left"].set_visible(False)
+ax.legend(frameon=False, fontsize=8, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.12))
 fig.tight_layout(); fig.savefig(OUT / "g7_seguro.png", transparent=True); plt.close(fig)
 
 json.dump(R, open(OUT / "cifras_v2.json", "w"), indent=1, ensure_ascii=False, default=float)

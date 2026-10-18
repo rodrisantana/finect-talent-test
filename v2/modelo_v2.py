@@ -17,7 +17,8 @@ Estructura del plan:
       Carrera (26-30), Puente (31-39) y Rentas (40 en adelante).
   * Pisos: no se compran más mientras sea no residente; al volver a España (33) se compran
     los necesarios para que los inmuebles (pisos + inmobiliario cotizado) sean el 40 % del patrimonio.
-  * Agencia: 1 M€ a los 33 y 1 M€ a los 36, a rentabilidad 0 %.
+  * Agencia: hasta 3,5 M€ (como en la versión 1), invertidos en la cartera hasta que se usan por fases:
+    1,5 M€ a los 33 (licencia FIFA y equipo), 1 M€ a los 34 y 1 M€ a los 35 (primeros representados), a rentabilidad 0 %.
 """
 import numpy as np
 import ltcma_v2 as L
@@ -59,8 +60,8 @@ SUPUESTOS = dict(
     pisos0=14.0, liquido0=6.0, colchon=3.0,
     rent_bruta_pisos=0.05, gastos_pisos=0.25, irnr=0.19, irpf_alquiler=0.22,
     revalorizacion_pisos=0.025, vol_pisos=0.08, coste_compra_pisos=0.07,
-    coste_cartera=0.008, impuesto_rescate=0.28, prima_seguro=0.0125,
-    objetivo_inmuebles=0.40, agencia=((33, 1.0), (36, 1.0)),
+    coste_cartera=0.009, impuesto_rescate=0.28, prima_seguro=0.0125,
+    objetivo_inmuebles=0.40, agencia=((33, 1.5), (34, 1.0), (35, 1.0)),
     rent_colchon=0.022, haircut_venta_pisos=0.10, indexar_itsgf=True,
 )
 
